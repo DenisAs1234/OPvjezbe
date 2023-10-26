@@ -29,7 +29,7 @@ void raspon(float** A, int a, int b)
 	{
 		for (j = 0; j < b; j++)
 		{
-			cout << ""<<A[i][j]<<" ";
+			cout << "" << A[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -42,7 +42,7 @@ void zbrajanje(float** A, float** B, int r, int s)
 	{
 		for (j = 0; j < s; j++)
 		{
-			cout << ""<<A[i][j] + B[i][j]<<" ";
+			cout << "" << A[i][j] + B[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -55,7 +55,7 @@ void oduzimanje(float** A, float** B, int r, int s)
 	{
 		for (j = 0; j < s; j++)
 		{
-			cout << ""<<A[i][j] - B[i][j]<<" ";
+			cout << "" << A[i][j] - B[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -68,7 +68,7 @@ void mnozenje(float** A, float** B, int r, int s)
 	{
 		for (j = 0; j < s; j++)
 		{
-			cout << ""<<A[i][j]*B[j][i]<<" ";
+			cout << "" << A[i][j] * B[j][i] << " ";
 		}
 		cout << endl;
 	}
@@ -81,7 +81,7 @@ void transponiranje(float** A, int r, int s)
 	{
 		for (i = 0; i < s; i++)
 		{
-			cout << ""<<A[i][j]<<" ";
+			cout << "" << A[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -96,7 +96,7 @@ void ispisivanje(float** A, int r, int s)
 		{
 			cout << fixed;
 			cout << setprecision(4);
-			cout << ""<<A[i][j]<<" ";
+			cout << "" << A[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -143,5 +143,15 @@ int main()
 	transponiranje(M.mat, M.red, M.stupac);
 	cout << "Ispis:" << endl;
 	ispisivanje(M.mat, M.red, M.stupac);
+	for (i = 0; i < M.red; i++)
+	{
+		delete[] M.mat[i];
+	}
+	delete[] M.mat;
+	for (i = 0; i < N.red; i++)
+	{
+		delete[] N.mat[i];
+	}
+	delete[] N.mat;
 	return 0;
 }
